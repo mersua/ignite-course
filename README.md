@@ -1,2 +1,2 @@
 # ignite-course
-do course
+do course in IgniteOutsourcing
