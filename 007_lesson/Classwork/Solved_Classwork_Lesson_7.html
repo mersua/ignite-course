@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Solved Classwork for Lesson 7</title>
+
+    <style>
+        div {
+            height: 250px;
+            width: 180%;
+            padding: 20px;
+            background-color: burlywood;
+            font-size: 24px;
+        }
+
+        p {
+            height: 180px;
+            width: 100%;
+            padding: 25px;
+            background-color: green;
+            font-size: 22px;
+        }
+
+    </style>
+
+    <script>
+        window.onload = function () {
+            var elements = document.body.children; console.log(elements);
+            var moveSpan = document.createElement("span");
+            moveSpan.innerHTML = "Moving Span!";
+            var idElem = 0, idPlace = 0;
+            var places = ["beforeBegin", "afterBegin", "beforeEnd", "afterEnd"];
+
+//            /**
+//             *
+//             * @param {int} idElem
+//             */
+//            function moveSpanToElem(idElem) {
+//                console.log(idElem);
+//                if (idElem < places.length - 1) idElem++;
+//                elements[0].insertAdjacentElement(places[idElem], moveSpan);
+//            }
+
+            var timer = setInterval(function () {
+                if (idPlace < places.length) {
+                    idPlace++;
+                } else if (idPlace == places.length) {
+                    idElem++;
+                    idPlace = 0;
+                }
+                elements[idElem].insertAdjacentElement(places[idElem], moveSpan);
+            }, 400);
+
+        }
+    </script>
+
+</head>
+<body>
+<!-- ###Задача 1.
+Создайте страницу. Разместите на ней произвольное количеством элементов.
+Разработайте сценарий, который будет по очереди перемещать span с текстом и интервалом в 400мс:
+1) Перед элементом.
+2) Внутри элемента перед текстом
+3) Внетри элемента после текста.
+4) После элемента. -->
+
+<div>
+    This is DIV element
+</div>
+
+<p>
+    This is P element
+</p>
+
+<div>
+    This is another DIV element
+</div>
+</body>
+</html>
