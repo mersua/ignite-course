@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Classwork - task 1 (lesson 2)</title>
+
+    <script>
+        // ### Задача 1.
+        // Каков будет результат выполнения этого кода?
+
+        var value = 0;
+        function f_1() {
+            if (1) {
+                value = true;
+            } else {
+                var value = false;
+            }
+            alert(value);
+        }
+        //f_1();
+
+        // Изменится ли внешняя переменная value ?
+        // Как изменится рузультат, если из строки var value = false убрать ключевое слово var?
+
+        function f_2() {
+            if (1) {
+                value = true;
+            } else {
+                value = false;
+            }
+            alert(value);
+        }
+        //f_2();
+
+        /**
+         * Відповідь:
+         * 1. Буде виведено алерт із value == true, при цьому значення глобальної змінної value = 0 (зміна глобальної змінної не відбулась);
+         *
+         * 2. Буде виведено алерт з value == true, при цьому значення глобальної змінної value = true;
+         *
+         * Отже, у першому випадку відбудеться зміна локального value, а в другому - глобального;
+         */
+
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>
