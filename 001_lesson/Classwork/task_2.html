@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Classwork - task 2 (lesson 1)</title>
+
+    <script>
+        // ### Задача 2.
+        // Создайте функцию isEmpty(obj), которая возвращает true,
+        // если в объекте нет свойств и false – если хоть одно свойство есть.
+
+        /**
+         * Function isEmpty() check is empty object
+         * @param {object} obj
+         * @return {boolean} true - obj doesn't have properties (empty), false - obj has some properties
+         */
+        function isEmpty(obj) {
+
+            if (obj === null) {
+                return false;
+            }
+
+            for (var prop in obj) {
+                return false;
+            }
+
+            return true;
+        }
+
+        var someObj = {a: 1, b: 2};
+        var someAnotherObj = {};
+        console.log(isEmpty(someObj));
+        console.log(isEmpty(someAnotherObj));
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Classwork - task 3 (lesson 1)</title>
+
+    <script>
+        // ### Задача 3.
+        // Дан массив чисел: [1,2,31,24,-67,5,3,555,79,-4,21,33,89,-90].
+        // 1) Найдите максимальное и минимальное значение массива.
+        // 2) Все положительные и четные числа запишите в другой массив.
+        // Результаты выведите на экран.
+
+        var array = [1,2,31,24,-67,5,3,555,79,-4,21,33,89,-90], newArray = [];
+        var minNumber = array[0], maxNumber = array[0];
+
+        for(var i = 1, j = 0; i < array.length; i++) {      // start from second item
+            if(array[i] < minNumber) minNumber = array[i];
+            if(array[i] > maxNumber) maxNumber = array[i];
+
+            if(array[i] > 0 && array[i] % 2 == 0) {        // define even and greater than zero number
+                newArray[j] = array[i];
+                j++;
+            }
+        }
+
+        document.write("Array: " + array.join() + "<br>");
+        document.write("Min number is: " + minNumber + "<br>");
+        document.write("Max number is: " + maxNumber + "<br>");
+        document.write("New Array: " + newArray.join());
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>

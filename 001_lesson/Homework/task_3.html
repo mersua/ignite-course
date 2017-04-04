@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Homework - task 3 (lesson 1)</title>
+
+    <script>
+        // ### Задача 3.
+        // Напишите функцию bigToSmall, которая будет принимать один аргумент arr (двухмерный массив).
+        // Ваше задание:
+        // 1. Привести двухмерный массив к одномерному.
+        // 2. Отсортировать массив в нисходящем порядке.
+        // 3. Использовать символ ‘>’ как разделитель при превращении массива в строку.
+        //
+        // Например:
+        // ```
+        // bigToSmall([[1,2],[3,4],[5,6]])  "6>5>4>3>2>1"
+        // bigToSmall([[1,3,5],[2,4,6]])    "6>5>4>3>2>1"
+        // bigToSmall([[1,1],[1],[1,1]])    "1>1>1>1>1"
+        // ```
+
+        /**
+         * This function transforms two-dimensional array in string, before it sort array from the biggest to the smallest
+         * @param {int[]} bigArr
+         * @return {string}
+         */
+        function bigToSmall(bigArr) {
+
+            // create one-dimensional array
+            var newBigArr = [];
+            for (var j = 0; j < bigArr.length; j++) {
+                newBigArr = newBigArr.concat(bigArr[j]);
+            }
+
+            // for sort array use standard function sort(function(){})
+            newBigArr.sort(function (a, b) {
+                return b - a; // descending order
+            });
+
+            // transform array to string with glue ">"
+            return newBigArr.join(">");
+        }
+
+        document.write(bigToSmall([[1, 2], [3, 4], [5, 6]]) + "<br>");
+        document.write(bigToSmall([[1, 3, 5], [2, 4, 6]]) + "<br>");
+        document.write(bigToSmall([[1, 1], [1], [1, 1]]));
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>
